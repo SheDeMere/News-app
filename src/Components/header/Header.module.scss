@@ -1,0 +1,54 @@
+.header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 50px;
+  height: 90px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.33);
+  position: fixed;
+  width: 100vw;
+  background: white;
+  z-index: 999;
+  top: 0;
+}
+
+.logo {
+  margin-left: 10px;
+  cursor: pointer;
+
+  img {
+    width: 350px;
+  }
+}
+
+.nav {
+  ul {
+    display: flex;
+    align-items: center;
+    padding: 0;
+  }
+
+  li {
+    list-style: none;
+    margin-left: 10px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+}
+
+.login {
+  margin-right: 10px;
+
+  button {
+    background: transparent;
+    border: solid 1px black;
+    outline: none;
+    width: 100px;
+    height: 35px;
+    border-radius: 4px;
+    cursor: pointer;
+
+
+  }
+
+}

@@ -1,0 +1,61 @@
+.formBack {
+  width: 100vw;
+  height: 100vh;
+  background: rgba(40, 44, 52, 0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-scrolling: touch;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form {
+  width: 500px;
+  height: 500px;
+  background: white;
+  border: solid 1px gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+
+  p {
+    position: absolute;
+    right: 15px;
+    cursor: pointer;
+    top: 10px;
+    margin: 0;
+    font-size: 20px;
+  }
+
+
+
+  input {
+    width: 300px;
+    height: 50px;
+    display: block;
+    margin-bottom: 20px;
+    outline: none;
+    border-radius: 4px;
+    border: solid 1px gainsboro;
+    padding-left: 10px;
+    box-sizing: border-box;
+  }
+
+  input:nth-child(3) {
+    height: 100px;
+  }
+
+  button {
+    width: 200px;
+    height: 35px;
+    background: #282c34;
+    color: white;
+    border: #282c34 solid 1px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+}
