@@ -1,9 +1,11 @@
-import React, { useEffect } from 'react'
-import styles from './News.module.scss'
-import { useDispatch, useSelector } from 'react-redux'
-import { getNews } from '../../Redux/actions/getNews'
-import News from './News'
-import AddPost from '../addPost'
+import React, { useEffect } from 'react';
+import styles from './News.module.scss';
+import { useDispatch, useSelector } from 'react-redux';
+import { getNews } from '../../Redux/actions/getNews';
+import News from './News';
+import AddPost from '../addPost';
+import ModalIndex from './modalInfo'
+import { Route } from 'react-router-dom'
 function Index () {
 
   const dispatch = useDispatch();
@@ -22,6 +24,9 @@ function Index () {
         })}
       </div>
       {modalPostNews && <AddPost/>}
+     <Route path={`/news/:id?`}>
+       <ModalIndex />
+     </Route>
     </div>
   )
 }

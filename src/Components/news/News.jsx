@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import styles from './News.module.scss'
 import { Link } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
@@ -24,7 +24,6 @@ function News ({ info }) {
           <p>{info.desc.length > 80 ? lengthSymbol : info.desc}</p>
         </div>
         <span>{info.date}</span>
-
       </div>
     </Link>
   )

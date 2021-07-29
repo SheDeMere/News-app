@@ -23,14 +23,15 @@ export const news = (state = initialState, action) => {
     case 'get/modal/start':
       return {
         ...state,
-        loading: true
+        loading: true,
+        modalInfo: []
       }
 
     case 'get/modal/success':
       return {
         ...state,
         loading: false,
-        modalInfo: action.payload
+        modalInfo: [action.payload]
       }
     default:
       return state

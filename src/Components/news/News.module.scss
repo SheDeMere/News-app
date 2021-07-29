@@ -27,6 +27,7 @@
   color: #282c34;
   margin: 40px 0;
   background: white;
+  height: 420px;
 
   img {
     width: 360px;
@@ -52,10 +53,73 @@
     font-size: 13px;
   }
 
-  .newsText {
-    padding: 3px;
-    font-weight: bold;
-    margin-left: 10px;
-    border: solid 2px rgba(255, 0, 0, 0.57);
+}
+.modalBlock::-webkit-scrollbar {
+  width: 0;
+}
+
+.modalInfoBack {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.22);
+  z-index: 99;
+
+
+    span {
+      color: #ffffff;
+      font-size: 30px;
+      position: absolute;
+      right: 20px;
+    }
+
+
+  .modalBlock {
+    width: 1300px;
+    background: rgba(52, 51, 51, 0.85);
+    margin-top: 90px;
+    text-align: center;
+    height: 100vh;
+    overflow: scroll;
+    position: relative;
+    padding-top: 20px;
+    color: white;
+
+
+    img {
+      width: 900px;
+      height: 600px;
+      border-bottom: 1px solid gray;
+      padding-bottom: 40px;
+      padding-top: 30px;
+    }
+
+
+    h1 {
+      text-align: center;
+      width: 900px;
+      margin: auto;
+      font-family: "Microsoft JhengHei Light";
+
+    }
+
+    p {
+      font-size: 20px;
+      width: 900px;
+      padding-bottom: 100px;
+      margin: auto;
+      padding-top: 50px;
+      text-align: left;
+      line-height: 40px;
+      font-family: "Microsoft JhengHei Light";
+      font-weight: 100;
+      background: white;
+      color: black;
+      margin-top: 50px;
+    }
   }
 }
