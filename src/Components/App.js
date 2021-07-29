@@ -1,5 +1,5 @@
 import Header from '../Components/header'
-import News from '../Components/news'
+import News from '../Components'
 
 
 function App() {

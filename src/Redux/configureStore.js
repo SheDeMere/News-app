@@ -1,12 +1,14 @@
 import { applyMiddleware, combineReducers, createStore } from 'redux'
 import thunk from 'redux-thunk'
+import { addNews, login, news } from './reducers'
 import { createLogger } from 'redux-logger/src'
-import { news } from './reducers/news'
 
 const logger = createLogger({
   diff: true,
   collapsed: true
 })
+
 export const store = createStore(
-  combineReducers({news}),
-  applyMiddleware(logger,thunk))
+  combineReducers({ news, login, addNews }),
+  applyMiddleware(logger,thunk)
+);

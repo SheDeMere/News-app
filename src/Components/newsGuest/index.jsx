@@ -5,13 +5,11 @@ import { getNews } from '../../Redux/actions/getNews';
 import News from './News';
 import AddPost from '../addPost';
 import ModalIndex from './modalInfo'
-import { Route, useParams } from 'react-router-dom'
+import { Route } from 'react-router-dom'
 function Index () {
-  const params = useParams().id;
-  console.log(params)
   const dispatch = useDispatch();
 
-  const { items, modalPostNews } = useSelector(state => state.news);
+  const { items } = useSelector(state => state.news);
 
   useEffect(() => {
     dispatch(getNews())
@@ -24,7 +22,7 @@ function Index () {
           return <News info={items} key={index}/>
         })}
       </div>
-      {modalPostNews && <AddPost/>}
+
      <Route path={`/news/:id?`}>
        <ModalIndex />
      </Route>

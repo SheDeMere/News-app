@@ -1,11 +1,10 @@
 const initialState = {
   items: [],
+  modalInfo: [],
   loading: false,
-  modalPostNews: false,
-  modalInfo: []
 }
 
-export const news = (state = initialState, action) => {
+const news = (state = initialState, action) => {
   switch (action.type) {
     case 'news/load/start':
       return {
@@ -37,3 +36,5 @@ export const news = (state = initialState, action) => {
       return state
   }
 }
+
+export default news;
