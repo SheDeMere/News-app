@@ -20,7 +20,9 @@ function Index () {
     <div className={styles.backNews}>
       <div className={styles.newsMain}>
         {items.map((items, index) => {
-          return <News info={items} key={index}/>
+          if(items.completed) {
+            return  <News info={items} key={index}/>
+          }
         })}
       </div>
      <Route path={`/news/:id?`}>

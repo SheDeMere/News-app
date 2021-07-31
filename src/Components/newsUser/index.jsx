@@ -27,7 +27,9 @@ function Index () {
       <button onClick={openWindowAddPost} className={styles.openWindow}>+</button>
       <div className={styles.newsMain}>
         {items.map((items, index) => {
-          return <News info={items} key={index}/>
+          if (items.completed) {
+            return <News info={items} key={index}/>
+          }
         })}
       </div>
       {openModalWindow && <AddPost/>}

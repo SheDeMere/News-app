@@ -24,8 +24,8 @@ export const addPost = (id, title,image, desc, date) => {
         desc: desc,
         date: date,
         completed: false
-      })
+      }),
+      headers: { 'Content-type': 'application/json; charset=utf-8' }
     })
-
   }
 }
