@@ -1,6 +1,7 @@
-import React from 'react'
-import styles from './Header.module.scss'
-import logo from '../../assets/kraken2.png'
+import React from 'react';
+import styles from './Header.module.scss';
+import logo from '../../assets/kraken2.png';
+import notification from '../../assets/notification.png';
 function Index () {
   return (
     <div>
@@ -15,6 +16,9 @@ function Index () {
           <img src={logo} alt="logo"/>
         </div>
         <div className={styles.login}>
+          <div className={styles.notification}>
+            <img src={notification}  className={styles.notificationImg} alt="notification"/>
+          </div>
           <button>Войти</button>
         </div>
       </div>
