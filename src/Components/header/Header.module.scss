@@ -58,9 +58,26 @@
 
     .notificationImg {
       width: 30px;
-      margin-right: 10px;
+      margin-right: 20px;
       cursor: pointer;
     }
   }
-
+  .notInfo {
+    position: relative;
+    p {
+      margin: 0;
+      background: red;
+      color: white;
+      width: 15px;
+      height: 15px;
+      border-radius: 200px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: -3px;
+      right: 18px;
+      font-size: 14px;
+    }
+  }
 }
