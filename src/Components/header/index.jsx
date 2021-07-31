@@ -1,17 +1,25 @@
 import React from 'react';
 import styles from './Header.module.scss';
 import logo from '../../assets/kraken2.png';
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import notification from '../../assets/notification.png';
+import { openModerWindow } from '../../Redux/actions/newsModeration'
 
 function Index () {
   const dataNews = useSelector(state => state.news.items);
+
   const data = dataNews.map(items => items.completed);
+
+  const dispatch = useDispatch();
+
+  //счетчик запросов новых статей
   const falseCount = dataNews.reduce((num,items) => {
     return items.completed === false ? num + 1 : num
   },0)
 
-  console.log(falseCount)
+  const handleOpenModerWindow = () => {
+    dispatch(openModerWindow())
+  }
 
   return (
     <div>
@@ -28,12 +36,12 @@ function Index () {
         <div className={styles.login}>
           <div className={styles.notification}>
             {data.includes(false)  ?
-              <div className={styles.notInfo}>
-                <p></p>
+              <div className={styles.notInfo} onClick={handleOpenModerWindow}>
+                <p>{falseCount}</p>
                 <img src={notification} alt="" className={styles.notificationImg}/>
               </div>
               :
-              <img src={notification} className={styles.notificationImg}/>
+              <img src={notification} className={styles.notificationImg} onClick={handleOpenModerWindow}/>
             }
           </div>
           <button>Войти</button>

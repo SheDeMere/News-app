@@ -6,11 +6,12 @@ import News from './News';
 import AddPost from '../addPost';
 import ModalIndex from './modalInfo'
 import { Route } from 'react-router-dom'
+import Notification from './notification'
 function Index () {
 
   const dispatch = useDispatch();
 
-  const { items } = useSelector(state => state.news);
+  const { items, windowModeration } = useSelector(state => state.news);
 
   useEffect(() => {
     dispatch(getNews())
@@ -25,9 +26,8 @@ function Index () {
           }
         })}
       </div>
-     <Route path={`/news/:id?`}>
+      {windowModeration && <Notification/>}
        <ModalIndex />
-     </Route>
     </div>
   )
 }

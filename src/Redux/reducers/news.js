@@ -2,6 +2,7 @@ const initialState = {
   items: [],
   modalInfo: [],
   loading: false,
+  windowModeration: false
 }
 
 const news = (state = initialState, action) => {
@@ -31,6 +32,30 @@ const news = (state = initialState, action) => {
         ...state,
         loading: false,
         modalInfo: [action.payload]
+      }
+
+    case 'close/moder/window':
+      return {
+        ...state,
+        windowModeration: false
+      }
+
+    case 'open/moder/window':
+      return {
+        ...state,
+        windowModeration: true
+      }
+
+    case 'post/accepted/start':
+      return {
+        ...state,
+        loading: true,
+      }
+
+    case 'post/accepted/success':
+      return {
+        ...state,
+        items: [...state.items, action.payload]
       }
     default:
       return state
