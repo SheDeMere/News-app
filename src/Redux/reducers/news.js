@@ -2,7 +2,8 @@ const initialState = {
   items: [],
   modalInfo: [],
   loading: false,
-  windowModeration: false
+  windowModeration: false,
+  windowNewsInfo: false
 }
 
 const news = (state = initialState, action) => {
@@ -57,6 +58,20 @@ const news = (state = initialState, action) => {
         ...state,
         items: [...state.items, action.payload]
       }
+
+
+    case 'close/news/window':
+      return {
+        ...state,
+        windowNewsInfo: false
+      }
+
+    case 'open/news/window':
+      return {
+        ...state,
+        windowNewsInfo: true
+      }
+
     default:
       return state
   }

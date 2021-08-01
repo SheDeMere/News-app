@@ -1,7 +1,7 @@
 const initialState = {
   guest: false,
-  user: false,
-  admin: true
+  user: true,
+  admin: false
 }
 
 const login = (state = initialState, action) => {

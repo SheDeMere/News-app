@@ -81,3 +81,16 @@
     }
   }
 }
+
+.empty {
+  display: flex;
+  align-items: center;
+  position: relative;
+  p {
+    position: absolute;
+    width: 200px;
+    color: red;
+    font-size: 13px;
+    left: -130px;
+  }
+}

@@ -2,7 +2,7 @@ import React from 'react'
 import styles from './News.module.scss'
 import { Link } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
-import { getIdModal } from '../../Redux/actions/getNews'
+import { getIdModal, openNewsWindow } from '../../Redux/actions/getNews'
 
 function News ({ info }) {
   const lengthSymbol = info.desc.substr(0, 80) + '...';
@@ -13,10 +13,11 @@ function News ({ info }) {
 
   const handleClickId = (id) => {
     dispatch(getIdModal(id))
+    dispatch(openNewsWindow())
   }
 
   return (
-    <Link to={`/news/${info.id}`}>
+    <Link to={`/news/${info.id}`} >
       <div className={styles.news} onClick={() => handleClickId(info.id)}>
         <div className={styles.title}>
           <img src={info.imageURL} alt=""/>

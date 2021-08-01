@@ -1,4 +1,4 @@
-import Header from '../Components/header'
+import Header from './Headers/headerAdmin'
 import News from '../Components'
 
 

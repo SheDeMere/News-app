@@ -1,17 +1,16 @@
 import React, { useEffect } from 'react';
 import styles from './News.module.scss';
 import { useDispatch, useSelector } from 'react-redux';
-import { getNews } from '../../Redux/actions/getNews';
+import { getNews, openNewsWindow } from '../../Redux/actions/getNews'
 import News from './News';
-import AddPost from '../addPost';
 import ModalIndex from './modalInfo'
-import { Route } from 'react-router-dom'
 import Notification from './notification'
 function Index () {
 
   const dispatch = useDispatch();
 
-  const { items, windowModeration } = useSelector(state => state.news);
+  const { items, windowModeration, windowNewsInfo } = useSelector(state => state.news);
+
 
   useEffect(() => {
     dispatch(getNews())
@@ -27,7 +26,7 @@ function Index () {
         })}
       </div>
       {windowModeration && <Notification/>}
-       <ModalIndex />
+      {windowNewsInfo && <ModalIndex/>}
     </div>
   )
 }

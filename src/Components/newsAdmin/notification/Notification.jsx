@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react'
 import styles from '../News.module.scss';
 import { useDispatch } from 'react-redux'
 import { postAccepted, postCanceled } from '../../../Redux/actions/newsModeration'
@@ -13,6 +13,9 @@ function Notification ({ item }) {
   const handleFalse = (id) => {
     dispatch(postCanceled(id,))
   };
+  useEffect(() => {
+    dispatch(postAccepted())
+  },[dispatch])
   return (
     <div className={styles.newsModerBlock}>
       <div className={styles.notificationInfo}>

@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react'
 import styles from './Header.module.scss';
-import logo from '../../assets/kraken2.png';
+import logo from '../../../assets/kraken2.png';
 import { useDispatch, useSelector } from 'react-redux'
-import notification from '../../assets/notification.png';
-import { openModerWindow } from '../../Redux/actions/newsModeration'
+import notification from '../../../assets/notification.png';
+import { openModerWindow } from '../../../Redux/actions/newsModeration'
 
 function Index () {
   const dataNews = useSelector(state => state.news.items);
@@ -11,12 +11,18 @@ function Index () {
   const data = dataNews.map(items => items.completed);
 
   const dispatch = useDispatch();
-
+  const [empty, setEmpty] = useState(false);
   //счетчик запросов новых статей
   const falseCount = dataNews.reduce((num,items) => {
     return items.completed === false ? num + 1 : num
   },0)
 
+  const handleClickEmptyWindow = () => {
+    setEmpty(true)
+    setTimeout(() => {
+      setEmpty(false)
+    }, 2000)
+  }
   const handleOpenModerWindow = () => {
     dispatch(openModerWindow())
   }
@@ -41,7 +47,10 @@ function Index () {
                 <img src={notification} alt="" className={styles.notificationImg}/>
               </div>
               :
-              <img src={notification} className={styles.notificationImg} onClick={handleOpenModerWindow}/>
+              <div className={styles.empty}>
+                {empty && <p>Нет новых запросов</p>}
+                <img src={notification} className={styles.notificationImg} onClick={handleClickEmptyWindow}/>
+              </div>
             }
           </div>
           <button>Войти</button>

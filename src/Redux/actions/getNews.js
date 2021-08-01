@@ -27,3 +27,15 @@ export const getIdModal = (id) => {
       })
   }
 }
+
+export const openNewsWindow = () => {
+  return {
+    type: 'open/news/window'
+  }
+}
+
+export const closeNewsWindow = () => {
+  return {
+    type: 'close/news/window'
+  }
+}
