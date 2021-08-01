@@ -12,7 +12,6 @@ function Index () {
      {guest && <NewsGuest/>}
      {user && <NewsUser />}
      {admin && <NewsAdmin />}
-
    </div>
   )
 }

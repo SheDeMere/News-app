@@ -1,17 +1,8 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styles from './Header.module.scss';
 import logo from '../../../assets/kraken2.png';
-import { useDispatch, useSelector } from 'react-redux'
-import notification from '../../../assets/notification.png';
-import { openModerWindow } from '../../../Redux/actions/newsModeration'
 
 function Index () {
-  const dataNews = useSelector(state => state.news.items);
-
-  const data = dataNews.map(items => items.completed);
-
-
-
   return (
     <div>
       <div className={styles.header}>

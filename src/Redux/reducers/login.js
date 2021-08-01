@@ -1,12 +1,11 @@
 const initialState = {
   guest: false,
-  user: true,
-  admin: false
+  user: false,
+  admin: true
 }
 
 const login = (state = initialState, action) => {
   switch (action.type) {
-
     default:
       return state
   }
