@@ -5,8 +5,6 @@ import NewsUser from '../Components/newsUser';
 import NewsAdmin from '../Components/newsAdmin';
 function Index () {
   const { guest, user, admin } = useSelector(state => state.login)
-
-
   return (
    <div>
      {guest && <NewsGuest/>}

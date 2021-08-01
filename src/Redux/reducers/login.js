@@ -1,11 +1,48 @@
 const initialState = {
-  guest: false,
+  guest: true,
   user: false,
-  admin: true
+  admin: false,
+  modalWindow: false,
+  errorMessage: false
 }
 
 const login = (state = initialState, action) => {
   switch (action.type) {
+    case 'open/login/window':
+      return {
+        ...state,
+        modalWindow: true
+      }
+
+    case 'close/login/window':
+      return {
+        ...state,
+        modalWindow: false
+      }
+
+    case 'logined/admin':
+      return {
+        ...state,
+        guest: false,
+        user: false,
+        admin: true,
+        modalWindow: false
+      }
+
+    case 'login/success':
+      return {
+        ...state,
+        guest: false,
+        user: true,
+        admin: false,
+        modalWindow: false
+      }
+
+    case 'login/denied':
+      return {
+        ...state,
+        errorMessage: true
+      }
     default:
       return state
   }

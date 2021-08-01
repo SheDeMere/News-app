@@ -1,3 +1,4 @@
+
 .header {
   display: flex;
   justify-content: space-around;
@@ -26,6 +27,7 @@
     display: flex;
     align-items: center;
     padding: 0;
+
   }
 
   li {
@@ -33,6 +35,11 @@
     margin-left: 10px;
     cursor: pointer;
     font-weight: bold;
+    color: #282c34;
+
+    &:hover {
+      color: gray;
+    }
   }
 }
 

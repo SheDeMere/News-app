@@ -3,7 +3,6 @@ import styles from './News.module.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { getNews } from '../../Redux/actions/getNews';
 import News from './News';
-import AddPost from '../addPost';
 import ModalIndex from './modalInfo'
 import { Route } from 'react-router-dom'
 function Index () {
@@ -14,7 +13,6 @@ function Index () {
   useEffect(() => {
     dispatch(getNews())
   }, [dispatch])
-
   return (
     <div className={styles.backNews}>
       <div className={styles.newsMain}>
@@ -24,8 +22,7 @@ function Index () {
           }
         })}
       </div>
-
-     <Route path={`/news/:id?`}>
+     <Route path={`/news/`}>
        <ModalIndex />
      </Route>
     </div>

@@ -3,9 +3,8 @@ import styles from '../News.module.scss'
 import { useSelector } from 'react-redux'
 import ModalInfo from './ModalInfo'
 
-function Index (props) {
+function Index () {
   const { modalInfo } = useSelector(state => state.news)
-
   return (
     <div className={styles.modalInfo}>
       {

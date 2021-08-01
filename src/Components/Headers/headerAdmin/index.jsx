@@ -4,12 +4,14 @@ import logo from '../../../assets/kraken2.png';
 import { useDispatch, useSelector } from 'react-redux'
 import notification from '../../../assets/notification.png';
 import { openModerWindow } from '../../../Redux/actions/newsModeration'
+import { Link } from 'react-router-dom'
+import Login from '../../auth/index'
 
 function Index () {
   const dataNews = useSelector(state => state.news.items);
 
   const data = dataNews.map(items => items.completed);
-
+  const { modalWindow } = useSelector(state => state.login)
   const dispatch = useDispatch();
   const [empty, setEmpty] = useState(false);
   //счетчик запросов новых статей
@@ -32,8 +34,12 @@ function Index () {
       <div className={styles.header}>
         <div className={styles.nav}>
           <ul>
-            <li>Главная</li>
-            <li>Новости</li>
+            <Link to='/main'>
+              <li>Главная</li>
+            </Link>
+            <Link to='/'>
+              <li>Новости</li>
+            </Link>
           </ul>
         </div>
         <div className={styles.logo}>
@@ -56,6 +62,7 @@ function Index () {
           <button>Войти</button>
         </div>
       </div>
+      {modalWindow && <Login/>}
     </div>
   )
 }

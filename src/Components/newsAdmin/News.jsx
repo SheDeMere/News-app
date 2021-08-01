@@ -1,6 +1,5 @@
 import React from 'react'
 import styles from './News.module.scss'
-import { Link } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { getIdModal, openNewsWindow } from '../../Redux/actions/getNews'
 
@@ -15,9 +14,7 @@ function News ({ info }) {
     dispatch(getIdModal(id))
     dispatch(openNewsWindow())
   }
-
   return (
-    <Link to={`/news/${info.id}`} >
       <div className={styles.news} onClick={() => handleClickId(info.id)}>
         <div className={styles.title}>
           <img src={info.imageURL} alt=""/>
@@ -26,7 +23,6 @@ function News ({ info }) {
         </div>
         <span>{info.date}</span>
       </div>
-    </Link>
   )
 }
 
