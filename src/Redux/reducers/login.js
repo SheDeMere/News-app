@@ -3,22 +3,22 @@ const initialState = {
   user: false,
   admin: false,
   modalWindow: false,
-  errorMessage: false
-}
+  errorMessage: false,
+};
 
 const login = (state = initialState, action) => {
   switch (action.type) {
     case 'open/login/window':
       return {
         ...state,
-        modalWindow: true
-      }
+        modalWindow: true,
+      };
 
     case 'close/login/window':
       return {
         ...state,
-        modalWindow: false
-      }
+        modalWindow: false,
+      };
 
     case 'logined/admin':
       return {
@@ -27,8 +27,8 @@ const login = (state = initialState, action) => {
         user: false,
         admin: true,
         modalWindow: false,
-        errorMessage: false 
-      }
+        errorMessage: false,
+      };
 
     case 'login/success':
       return {
@@ -37,25 +37,25 @@ const login = (state = initialState, action) => {
         user: true,
         admin: false,
         modalWindow: false,
-        errorMessage: false
-      }
+        errorMessage: false,
+      };
 
     case 'login/denied':
       return {
         ...state,
-        errorMessage: true
-      }
+        errorMessage: true,
+      };
 
     case 'exit/account':
       return {
         ...state,
         user: false,
         admin: false,
-        guest: true
-      }
+        guest: true,
+      };
     default:
-      return state
+      return state;
   }
-}
+};
 
 export default login;
