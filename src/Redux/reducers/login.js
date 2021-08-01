@@ -26,7 +26,8 @@ const login = (state = initialState, action) => {
         guest: false,
         user: false,
         admin: true,
-        modalWindow: false
+        modalWindow: false,
+        errorMessage: false 
       }
 
     case 'login/success':
@@ -35,7 +36,8 @@ const login = (state = initialState, action) => {
         guest: false,
         user: true,
         admin: false,
-        modalWindow: false
+        modalWindow: false,
+        errorMessage: false
       }
 
     case 'login/denied':

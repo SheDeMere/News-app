@@ -12,7 +12,7 @@ function Index () {
   const dataNews = useSelector(state => state.news.items);
 
   const data = dataNews.map(items => items.completed);
-  const logined = useSelector(state => state.login.guest)
+
   const { modalWindow } = useSelector(state => state.login)
   const dispatch = useDispatch();
   const [empty, setEmpty] = useState(false);
