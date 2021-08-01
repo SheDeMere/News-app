@@ -43,6 +43,14 @@ const login = (state = initialState, action) => {
         ...state,
         errorMessage: true
       }
+
+    case 'exit/account':
+      return {
+        ...state,
+        user: false,
+        admin: false,
+        guest: true
+      }
     default:
       return state
   }

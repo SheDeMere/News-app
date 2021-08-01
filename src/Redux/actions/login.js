@@ -38,3 +38,9 @@ export const sendAuthData = (login, pass) => {
       })
   }
 }
+
+export const exitAccount = () => {
+  return {
+    type: 'exit/account'
+  }
+}

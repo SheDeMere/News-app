@@ -6,15 +6,16 @@ import notification from '../../../assets/notification.png';
 import { openModerWindow } from '../../../Redux/actions/newsModeration'
 import { Link } from 'react-router-dom'
 import Login from '../../auth/index'
+import { exitAccount } from '../../../Redux/actions/login'
 
 function Index () {
   const dataNews = useSelector(state => state.news.items);
 
   const data = dataNews.map(items => items.completed);
+  const logined = useSelector(state => state.login.guest)
   const { modalWindow } = useSelector(state => state.login)
   const dispatch = useDispatch();
   const [empty, setEmpty] = useState(false);
-  //счетчик запросов новых статей
   const falseCount = dataNews.reduce((num,items) => {
     return items.completed === false ? num + 1 : num
   },0)
@@ -27,6 +28,9 @@ function Index () {
   }
   const handleOpenModerWindow = () => {
     dispatch(openModerWindow())
+  }
+  const handleExit = () => {
+    dispatch(exitAccount())
   }
 
   return (
@@ -59,7 +63,7 @@ function Index () {
               </div>
             }
           </div>
-          <button>Войти</button>
+            <button onClick={handleExit}>Выйти</button>
         </div>
       </div>
       {modalWindow && <Login/>}
