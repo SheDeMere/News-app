@@ -21,6 +21,11 @@ function Index() {
   const openWindowAddPost = () => {
     dispatch(openWindow());
   };
+  if (openModalWindow) {
+    document.body.style.overflow = 'hidden';
+  }else {
+    document.body.style.overflow = 'auto';
+  }
   return (
     <div className={styles.backNews}>
       <button onClick={openWindowAddPost} className={styles.openWindow}>

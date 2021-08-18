@@ -12,12 +12,14 @@ const login = (state = initialState, action) => {
       return {
         ...state,
         modalWindow: true,
+        errorMessage: false
       };
 
     case 'close/login/window':
       return {
         ...state,
         modalWindow: false,
+        errorMessage: false
       };
 
     case 'logined/admin':

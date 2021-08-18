@@ -13,7 +13,7 @@ function Index() {
     (state) => state.news,
   );
 
-  if (windowModeration) {
+  if (windowModeration || windowNewsInfo) {
     document.body.style.overflow = 'hidden'
   }else {
     document.body.style.overflow = 'auto'

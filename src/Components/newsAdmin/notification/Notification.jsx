@@ -2,15 +2,16 @@ import React, { useEffect } from 'react';
 import styles from '../News.module.scss';
 import { useDispatch } from 'react-redux';
 import {
-  postAccepted,
+  postAccepted, postAcceptedHidden,
   postCanceled,
-} from '../../../Redux/actions/newsModeration';
+} from '../../../Redux/actions/newsModeration'
 
 function Notification({ item }) {
   const dispatch = useDispatch();
 
   const handleTrue = (id) => {
     dispatch(postAccepted(id));
+    dispatch(postAcceptedHidden(id))
   };
 
   const handleFalse = (id) => {
@@ -20,6 +21,7 @@ function Notification({ item }) {
   useEffect(() => {
     dispatch(postAccepted());
   }, [dispatch]);
+
   return (
     <div className={styles.newsModerBlock}>
       <div className={styles.notificationInfo}>

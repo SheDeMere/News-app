@@ -56,16 +56,14 @@ const news = (state = initialState, action) => {
     case 'post/accepted/success':
       return {
         ...state,
-        items: state.items.filter(items => {
-          if(items.id === action.payload.id) {
-            return false
-          }else {
-            return items
-          }
+        items: [...state.items, action.payload]
+      }
 
-          return [...state.items, action.payload]
-        }),
-      };
+    case 'post/accepted/hidden':
+      return {
+        ...state,
+        items: state.items.filter(item => item.id !== action.payload)
+      }
 
     case 'close/news/window':
       return {

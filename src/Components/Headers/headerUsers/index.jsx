@@ -20,6 +20,12 @@ function Index() {
   const handleExit = () => {
     dispatch(exitAccount());
   };
+
+  if(modalWindow) {
+    document.body.style.overflow = 'hidden'
+  }else {
+    document.body.style.overflow = 'auto'
+  }
   return (
     <div>
       <div className={styles.header}>

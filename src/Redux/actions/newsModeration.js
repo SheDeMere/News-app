@@ -32,6 +32,7 @@ export const postAccepted = (id) => {
   };
 };
 
+//Полностью удаление поста с базы данных
 // export const postCanceled = (id) => {
 //   return (dispatch) => {
 //     dispatch({ type: 'post/canceled/start' });
@@ -41,10 +42,17 @@ export const postAccepted = (id) => {
 //   };
 // };
 
-export const postCanceled = (id) => {
 
+export const postCanceled = (id) => {
   return {
     type: 'post/canceled',
+    payload: id
+  }
+}
+
+export const postAcceptedHidden = (id) => {
+  return {
+    type: 'post/accepted/hidden',
     payload: id
   }
 }

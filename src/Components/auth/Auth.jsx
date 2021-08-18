@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styles from './Auth.module.scss';
 import { useDispatch, useSelector } from 'react-redux';
-import { sendAuthData } from '../../Redux/actions/login';
+import {  closeLoginWindow, sendAuthData } from '../../Redux/actions/login'
 function Auth() {
   const dispatch = useDispatch();
 
@@ -11,6 +11,10 @@ function Auth() {
 
   const [pass, setPass] = useState('');
 
+  const handleCloseAuth = () => {
+    dispatch(closeLoginWindow())
+  }
+
   const handleSendLogin = () => {
     dispatch(sendAuthData(login, pass));
     setPass('');
@@ -18,6 +22,7 @@ function Auth() {
   };
   return (
     <div className={styles.formLogin}>
+      <p className={styles.closeWindow} onClick={handleCloseAuth}>🗙</p>
       <div className={styles.inputs}>
         <h2>Авторизация</h2>
         <input

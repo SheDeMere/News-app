@@ -39,6 +39,15 @@
     margin-top: 20px;
   }
 
+  .closeWindow {
+    position: absolute;
+    top: 0;
+    right: 15px;
+    cursor: pointer;
+  }
+}
+
+.inputs {
   p {
     bottom: 50px;
     color: red;
