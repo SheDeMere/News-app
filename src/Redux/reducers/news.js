@@ -56,7 +56,15 @@ const news = (state = initialState, action) => {
     case 'post/accepted/success':
       return {
         ...state,
-        items: [...state.items, action.payload],
+        items: state.items.filter(items => {
+          if(items.id === action.payload.id) {
+            return false
+          }else {
+            return items
+          }
+
+          return [...state.items, action.payload]
+        }),
       };
 
     case 'close/news/window':
@@ -70,6 +78,12 @@ const news = (state = initialState, action) => {
         ...state,
         windowNewsInfo: true,
       };
+
+    case 'post/canceled':
+      return {
+        ...state,
+        items: state.items.filter(items => items.id !== action.payload)
+      }
 
     default:
       return state;

@@ -32,11 +32,19 @@ export const postAccepted = (id) => {
   };
 };
 
+// export const postCanceled = (id) => {
+//   return (dispatch) => {
+//     dispatch({ type: 'post/canceled/start' });
+//     fetch(`${NEWS_URL}/${id}`, {
+//       method: 'DELETE',
+//     });
+//   };
+// };
+
 export const postCanceled = (id) => {
-  return (dispatch) => {
-    dispatch({ type: 'post/canceled/start' });
-    fetch(`${NEWS_URL}/${id}`, {
-      method: 'DELETE',
-    });
-  };
-};
+
+  return {
+    type: 'post/canceled',
+    payload: id
+  }
+}

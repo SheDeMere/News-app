@@ -13,6 +13,12 @@ function Index() {
     (state) => state.news,
   );
 
+  if (windowModeration) {
+    document.body.style.overflow = 'hidden'
+  }else {
+    document.body.style.overflow = 'auto'
+  }
+
   useEffect(() => {
     dispatch(getNews());
   }, [dispatch]);

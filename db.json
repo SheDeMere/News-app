@@ -100,6 +100,14 @@
       "desc": "СТРАШНЫЙ ВОЛКОДАВ",
       "date": "1.8.2021, 14:24",
       "completed": false
+    },
+    {
+      "id": 11,
+      "title": "Nokia",
+      "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1200px-Image_created_with_a_mobile_phone.png",
+      "desc": "ладно, это описание :)",
+      "date": "18.8.2021, 15:16",
+      "completed": false
     }
   ]
 }
