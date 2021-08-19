@@ -150,6 +150,8 @@
   }
   img {
     width: 180px;
+    opacity: 1;
+    transition: opacity 0.4s;
   }
 }
 .notificationBack {

@@ -1,5 +1,3 @@
-const USERS_URL = 'http://localhost:3010/users';
-
 export const openLoginWindow = () => {
   return {
     type: 'open/login/window',
@@ -15,7 +13,7 @@ export const closeLoginWindow = () => {
 export const sendAuthData = (login, pass) => {
   return (dispatch) => {
     dispatch({ type: 'send/auth/start' });
-    fetch(USERS_URL)
+    fetch('/users')
       .then((res) => res.json())
       .then((json) => {
         json.map((data) => {

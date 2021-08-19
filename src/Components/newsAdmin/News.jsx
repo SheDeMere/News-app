@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react'
 import styles from './News.module.scss';
 import { useDispatch } from 'react-redux';
 import { getIdModal, openNewsWindow } from '../../Redux/actions/getNews';
@@ -26,4 +26,4 @@ function News({ info }) {
   );
 }
 
-export default News;
+export default memo(News);

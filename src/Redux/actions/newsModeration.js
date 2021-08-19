@@ -1,5 +1,3 @@
-const NEWS_URL = 'http://localhost:3010/news';
-
 export const closeModerWindow = () => {
   return {
     type: 'close/moder/window',
@@ -15,7 +13,7 @@ export const openModerWindow = () => {
 export const postAccepted = (id) => {
   return (dispatch) => {
     dispatch({ type: 'post/accepted/start' });
-    fetch(`${NEWS_URL}/${id}`, {
+    fetch(`news/${id}`, {
       method: 'PATCH',
       body: JSON.stringify({
         completed: true,

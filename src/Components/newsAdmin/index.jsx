@@ -1,11 +1,11 @@
-import React, { useEffect } from 'react';
+import React, { memo, useEffect, useMemo } from 'react'
 import styles from './News.module.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { getNews } from '../../Redux/actions/getNews';
 import News from './News';
 import ModalIndex from './modalInfo';
 import Notification from './notification';
-import { CSSTransition } from 'react-transition-group';
+
 
 function Index() {
   const dispatch = useDispatch();

@@ -1,9 +1,7 @@
-import { JS } from 'json-server/lib/cli/utils/is'
-
 const initialState = {
-  guest: JSON.parse(localStorage.getItem('guest')),
-  user: JSON.parse(localStorage.getItem('user')),
-  admin: JSON.parse(localStorage.getItem('admin')),
+  guest: JSON.parse(localStorage.getItem('guest')) || true,
+  user: JSON.parse(localStorage.getItem('user')) || false,
+  admin: JSON.parse(localStorage.getItem('admin')) || false,
   modalWindow: false,
   errorMessage: false,
 };

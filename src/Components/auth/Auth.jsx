@@ -32,7 +32,7 @@ function Auth() {
           onChange={(e) => setLogin(e.target.value)}
         />
         <input
-          type="text"
+          type="password"
           placeholder="Пароль"
           value={pass}
           onChange={(e) => setPass(e.target.value)}

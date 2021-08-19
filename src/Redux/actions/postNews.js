@@ -1,4 +1,3 @@
-const NEWS_URL = 'http://localhost:3010/news';
 
 export const openWindow = () => {
   return {
@@ -15,7 +14,7 @@ export const closeWindow = () => {
 export const addPost = (id, title, image, desc, date) => {
   return (dispatch) => {
     dispatch({ type: 'add/post/start' });
-    fetch(NEWS_URL, {
+    fetch('/news', {
       method: 'POST',
       body: JSON.stringify({
         id: id,

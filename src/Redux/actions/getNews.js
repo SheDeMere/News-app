@@ -1,9 +1,7 @@
-const NEWS_URL = 'http://localhost:3010/news';
-
 export const getNews = () => {
   return (dispatch) => {
     dispatch({ type: 'news/load/start' });
-    fetch(NEWS_URL)
+    fetch('/news')
       .then((res) => res.json())
       .then((json) => {
         dispatch({
@@ -17,7 +15,7 @@ export const getNews = () => {
 export const getIdModal = (id) => {
   return (dispatch) => {
     dispatch({ type: 'get/modal/start' });
-    fetch(`${NEWS_URL}/${id}`)
+    fetch(`/news/${id}`)
       .then((res) => res.json())
       .then((json) => {
         dispatch({
