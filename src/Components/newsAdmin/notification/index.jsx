@@ -8,14 +8,13 @@ function Index() {
   const { items } = useSelector((state) => state.news);
 
   const dispatch = useDispatch();
-  const filtered = items.filter(items => items.completed === false)
 
+  const filtered = items.filter(items => items.completed === false)
 
   const handleOpenModerWindow = () => {
     dispatch(closeModerWindow());
   };
 
-  console.log(filtered.length)
   return (
     <div className={styles.notificationBack}>
       <p onClick={handleOpenModerWindow} className={styles.close}>

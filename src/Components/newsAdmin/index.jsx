@@ -5,6 +5,7 @@ import { getNews } from '../../Redux/actions/getNews';
 import News from './News';
 import ModalIndex from './modalInfo';
 import Notification from './notification';
+import { CSSTransition } from 'react-transition-group'
 
 function Index() {
   const dispatch = useDispatch();
@@ -31,7 +32,9 @@ function Index() {
           }
         })}
       </div>
-      {windowModeration && <Notification />}
+      {<CSSTransition in={windowModeration} classNames={styles.alert} timeout={300} unmountOnExit>
+        <Notification />
+      </CSSTransition>}
       {windowNewsInfo && <ModalIndex />}
     </div>
   );

@@ -20,7 +20,13 @@ export const sendAuthData = (login, pass) => {
       .then((json) => {
         json.map((data) => {
           if (data.login === login && data.password === pass) {
+            localStorage.setItem('guest', false)
+            localStorage.setItem('admin', false)
+            localStorage.setItem('user', true)
             if (login === 'admin' && pass === 'admin') {
+              localStorage.setItem('guest', false)
+              localStorage.setItem('user', false)
+              localStorage.setItem('admin', true)
               dispatch({
                 type: 'logined/admin',
               });
@@ -40,6 +46,9 @@ export const sendAuthData = (login, pass) => {
 };
 
 export const exitAccount = () => {
+  localStorage.removeItem('user')
+  localStorage.removeItem('admin')
+  localStorage.removeItem('guest')
   return {
     type: 'exit/account',
   };
