@@ -5,7 +5,7 @@ import { getNews } from '../../Redux/actions/getNews';
 import News from './News';
 import ModalIndex from './modalInfo';
 import Notification from './notification';
-import { CSSTransition } from 'react-transition-group'
+import { CSSTransition } from 'react-transition-group';
 
 function Index() {
   const dispatch = useDispatch();
@@ -15,9 +15,9 @@ function Index() {
   );
 
   if (windowModeration || windowNewsInfo) {
-    document.body.style.overflow = 'hidden'
-  }else {
-    document.body.style.overflow = 'auto'
+    document.body.style.overflow = 'hidden';
+  } else {
+    document.body.style.overflow = 'auto';
   }
 
   useEffect(() => {
@@ -32,9 +32,7 @@ function Index() {
           }
         })}
       </div>
-      {<CSSTransition in={windowModeration} classNames={styles.alert} timeout={300} unmountOnExit>
-        <Notification />
-      </CSSTransition>}
+      {windowModeration &&  <Notification />}
       {windowNewsInfo && <ModalIndex />}
     </div>
   );
